@@ -3,7 +3,7 @@
 #   s: A string of length 0 or more characters
 #   t: A string of length 0 or more characters
 #
-# The function should return true iff the strings are anagrams of each other
+# The function should return true if the strings are anagrams of each other
 # Characters are case sensitive.
 # Assume that the string is not UTF.
 #
@@ -25,6 +25,6 @@ class ValidAnagram
   # @param {String} t
   # @return {Boolean}
   def is_anagram(s, t)
-    nil
+    s.split("").map {|char| char.ord}.sort == t.split("").map {|char| char.ord}.sort
   end
 end

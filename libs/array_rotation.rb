@@ -21,6 +21,11 @@ class ArrayRotation
   # @param {Integer} k
   # @return {Array}
   def rotate(a, k)
-    []
+    solution = []
+    r_index = k % a.length
+    a.each_with_index do |_, i|
+      i - r_index >= 0 ? solution[i] = a[i - r_index] : solution[i] = a[a.length - r_index - i]
+    end
+    solution
   end
 end
