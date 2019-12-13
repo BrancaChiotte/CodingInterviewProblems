@@ -18,6 +18,11 @@ class FirstNonRepeating
   # @param {String} text
   # @return {String}
   def find_first_non_repeating(text)
-    "-"
+    solution = []
+    array = text.split('')
+    array.each do |char|
+      solution << array.count(char)
+    end
+    solution.index(1).nil? ? "" : array[solution.index(1)]
   end
 end
